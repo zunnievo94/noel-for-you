@@ -1,6 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Bad+Script);
 
-
+@font-face {
+    font-family: myFirstFont;
+    src: url(./DFVN_Radja_Lover.otf);
+  }
+  
 *,
 *:after,
 *:before {
@@ -11,7 +15,7 @@
 h1 {
     position: absolute;
     top: 160px;
-    font-family: "Bad Script";
+    font-family: "myFirstFont";
     color: #de4747;
     text-align: center;
 }
@@ -337,10 +341,11 @@ body {
 
 .tag-text {
     width: 100%;
-    padding: 0 20px;
+    padding: 0 10px;
     color: #222;
-    font: 28px 'Sacramento', cursive;
+    font: 23px 'myFirstFont', cursive;
     text-align: center;
+    line-height: 40px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
