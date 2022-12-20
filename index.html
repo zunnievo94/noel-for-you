@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="./style.css">
+
+<script>
+    $("#header-plugin").load("https://vivinantony.github.io/header-plugin/", function () {
+        $("a.back-to-link").attr("href", "http://blog.thelittletechie.com/2015/03/love-heart-animation-using-css3.html#tlt")
+    });
+
+    var love = setInterval(function () {
+        var r_num = Math.floor(Math.random() * 40) + 1;
+        var r_size = Math.floor(Math.random() * 65) + 10;
+        var r_left = Math.floor(Math.random() * 100) + 1;
+        var r_bg = Math.floor(Math.random() * 25) + 100;
+        var r_time = Math.floor(Math.random() * 5) + 5;
+
+        $('.bg_heart').append("<div class='heart' style='width:" + r_size + "px;height:" + r_size + "px;left:" + r_left + "%;background:rgba(255," + (r_bg - 25) + "," + r_bg + ",1);-webkit-animation:love " + r_time + "s ease;-moz-animation:love " + r_time + "s ease;-ms-animation:love " + r_time + "s ease;animation:love " + r_time + "s ease'></div>");
+
+        $('.bg_heart').append("<div class='heart' style='width:" + (r_size - 10) + "px;height:" + (r_size - 10) + "px;left:" + (r_left + r_num) + "%;background:rgba(255," + (r_bg - 25) + "," + (r_bg + 25) + ",1);-webkit-animation:love " + (r_time + 5) + "s ease;-moz-animation:love " + (r_time + 5) + "s ease;-ms-animation:love " + (r_time + 5) + "s ease;animation:love " + (r_time + 5) + "s ease'></div>");
+
+        $('.heart').each(function () {
+            var top = $(this).css("top").replace(/[^-\d\.]/g, '');
+            var width = $(this).css("width").replace(/[^-\d\.]/g, '');
+            if (top <= -100 || width >= 150) {
+                $(this).detach();
+            }
+        });
+    }, 500);
+</script>
+
+<body>
+    <div id="header-plugin"></div>
+
+    <div class="bg_heart">
+        <!-- Content will go here -->
+        <div class="tags">
+
+            <div class="tag-container">
+                <div class="tag">
+
+                    <div class="tag-side tag-1-side">
+                        <div class="tag-1-top"></div>
+                        <div class="tag-text tag-1-text">
+                            Mở<br />cái này đầu tiên ạ
+                            <div class="rule-shape rule-red">&starf;</div>
+                        </div>
+                    </div>
+
+                    <div class="tag-side tag-1-side is-back">
+                        <div class="tag-1-top"></div>
+                        <div class="tag-text tag-1-text">
+                            Đầu tiên là xin chúc mừng noel đầu tiên bên nhau
+                            <div class="rule-shape">&starf;</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="tag-container">
+                <div class="tag">
+
+                    <div class="tag-side tag-2-side">
+                        <div class="tag-text tag-2-text">
+                            Cái này<br />tiếp theo ạ
+                            <div class="rule-diagonal"></div>
+                        </div>
+                    </div>
+
+                    <div class="tag-side tag-2-side is-back">
+                        <div class="tag-text tag-2-text">
+                            Cảm ơn vì em đã là 1 món quà to lớn cho noel này của anh
+                            <div class="rule-diagonal"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="tag-container">
+                <div class="tag">
+
+                    <div class="tag-side tag-3-side">
+                        <div class="tag-text tag-3-text">
+                            Chung<br />kết
+                            <div class="rule-shape">&#10052;</div>
+                        </div>
+                    </div>
+
+                    <div class="tag-side tag-3-side is-back">
+                        <div class="tag-text tag-3-text">
+                            Noel vui vẻ<br> Và <br>
+                            Anh thương em
+                            <div class="rule-shape">&#10052;</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="alllove">
+            <span class="love love1 glyphicon glyphicon-heart"></span>
+            <span class="love love2 glyphicon glyphicon-heart"></span>
+            <span class="love love3 glyphicon glyphicon-heart"></span>
+            <span class="love love4 glyphicon glyphicon-heart"></span>
+            <span class="love love5 glyphicon glyphicon-heart"></span>
+            <h1>I love you...</h1>
+        </div>
+    </div>
+</body>
+
+</html>
